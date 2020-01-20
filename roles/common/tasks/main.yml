@@ -1,0 +1,33 @@
+
+# We are using Ubuntu Xenial.  You can probably use a newer version but have not tested that here.
+# Delegate to server name must match name in hosts file and under the start a new container section below.
+# When copying files from a directory like below, you must update the path depending where you downloaded the folder.
+
+
+---
+
+
+
+
+
+- name: apt update   
+  delegate_to: "{{ lxdhost }}"   
+  raw: apt update
+
+
+- name: install nginx
+  delegate_to: "{{ lxdhost }}"
+  raw: apt install nginx -y
+
+- name: install git
+  delegate_to: "{{ lxdhost }}"
+  raw: apt install git -y
+
+- name: copy files
+  delegate_to: "{{ lxdhost }}"
+  raw: git clone https://github.com/BlackrockDigital/startbootstrap-landing-page.git
+
+- name: move files
+  delegate_to: "{{ lxdhost }}"
+  raw: cp -r startbootstrap-landing-page/. /usr/share/nginx/html
+

@@ -1,0 +1,12 @@
+---
+
+- name: create and lxd ubuntu 16.04 container - install nginx and bootstrap landing page.
+
+  hosts: localhost
+  connection: local
+#  become: yes
+  remote_user: root
+  
+  roles:
+    - lxd
+

@@ -1,0 +1,12 @@
+---
+
+- name: install nginx and bootstrap landing page.
+
+  hosts: servers
+  connection: local
+  become: yes
+  remote_user: steve
+  
+  roles:
+    - common
+
