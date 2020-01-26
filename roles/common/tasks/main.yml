@@ -1,7 +1,4 @@
 
-# We are using Ubuntu Xenial.  You can probably use a newer version but have not tested that here.
-# Delegate to server name must match name in hosts file and under the start a new container section below.
-# When copying files from a directory like below, you must update the path depending where you downloaded the folder.
 
 
 ---
